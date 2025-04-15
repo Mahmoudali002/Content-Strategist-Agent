@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكيل استراتيجية المحتوى</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>وكيل استراتيجية المحتوى</h1>
+            <p>أداة ذكية لإنشاء خطة محتوى شاملة لمدة 30 يومًا</p>
+        </header>
+        
+        <div class="form-container">
+            <form id="niche-form">
+                <div class="input-group">
+                    <label for="niche">أدخل اسم المشروع أو النيتش (المجال):</label>
+                    <input type="text" id="niche" name="niche" required>
+                </div>
+                <button type="submit" id="generate-btn">
+                    <i class="fas fa-magic"></i> إنشاء خطة المحتوى
+                </button>
+            </form>
+        </div>
+        
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>جاري إنشاء خطة المحتوى... يرجى الانتظار</p>
+        </div>
+        
+        <div id="results" class="hidden">
+            <div class="actions">
+                <button id="export-json" class="action-btn">
+                    <i class="fas fa-file-download"></i> تصدير إلى JSON
+                </button>
+                <button id="export-sheets" class="action-btn">
+                    <i class="fas fa-table"></i> تصدير إلى Google Sheets
+                </button>
+            </div>
+            
+            <div class="calendar-container">
+                <h2>خطة المحتوى لمدة 30 يومًا</h2>
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
